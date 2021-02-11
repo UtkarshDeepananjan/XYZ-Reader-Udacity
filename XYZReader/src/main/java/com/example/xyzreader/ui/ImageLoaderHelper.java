@@ -2,7 +2,8 @@ package com.example.xyzreader.ui;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v4.util.LruCache;
+
+import androidx.collection.LruCache;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
@@ -20,7 +21,7 @@ public class ImageLoaderHelper {
     }
 
     private final LruCache<String, Bitmap> mImageCache = new LruCache<String, Bitmap>(20);
-    private ImageLoader mImageLoader;
+    private final ImageLoader mImageLoader;
 
     private ImageLoaderHelper(Context applicationContext) {
         RequestQueue queue = Volley.newRequestQueue(applicationContext);
